@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "feedback-value-certification"
+version = "1.0.0"
+description = "Rational value certification for contractive learners with endogenous feedback"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Feedback Value Certification contributors"}]
+dependencies = []
+
+[project.scripts]
+feedback-value = "feedback_value_certification.cli:main"
+
+[project.urls]
+Repository = "https://github.com/wyyy5111/feedback-value-certification"
+Issues = "https://github.com/wyyy5111/feedback-value-certification/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

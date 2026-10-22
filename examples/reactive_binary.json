@@ -1,0 +1,99 @@
+{
+  "schema": "RATIONAL_SCALAR_FEEDBACK_INPUT_V1",
+  "domain": [
+    "0",
+    "1"
+  ],
+  "contraction": "2/3",
+  "thresholds": [
+    "1/2"
+  ],
+  "point_tags": [
+    1
+  ],
+  "open_tags": [
+    0,
+    1
+  ],
+  "x0": "1/2",
+  "policies": {
+    "tracking": [
+      [
+        "4/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "4/5"
+      ]
+    ],
+    "contrarian": [
+      [
+        "1/5",
+        "4/5"
+      ],
+      [
+        "4/5",
+        "1/5"
+      ]
+    ]
+  },
+  "name": "reactive_binary_tracking",
+  "description": "Rational binary feedback model with an action-dependent next observation.",
+  "observations": [
+    0,
+    1
+  ],
+  "increments": [
+    "0",
+    "1/3"
+  ],
+  "initial_state_law": [
+    "1/2",
+    "1/2"
+  ],
+  "response": [
+    [
+      [
+        "4/5",
+        "1/5"
+      ],
+      [
+        "2/5",
+        "3/5"
+      ]
+    ],
+    [
+      [
+        "3/5",
+        "2/5"
+      ],
+      [
+        "1/5",
+        "4/5"
+      ]
+    ]
+  ],
+  "reward": [
+    [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "-1",
+        "-1"
+      ]
+    ],
+    [
+      [
+        "-1",
+        "-1"
+      ],
+      [
+        "1",
+        "1"
+      ]
+    ]
+  ]
+}

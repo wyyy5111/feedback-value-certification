@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.16)
+project(FeedbackValueCertification VERSION 1.0.0 LANGUAGES CXX)
+
+include(CheckCXXSourceCompiles)
+check_cxx_source_compiles("int main() { __int128 x = 1; return int(x - 1); }" HAS_INT128)
+if(NOT HAS_INT128)
+  message(FATAL_ERROR "The RPS evaluator requires a compiler with __int128 support, such as GCC or Clang.")
+endif()
+
+add_executable(rps-value cpp/rps_value.cpp)
+target_compile_features(rps-value PRIVATE cxx_std_17)
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang|AppleClang")
+  target_compile_options(rps-value PRIVATE -Wall -Wextra)
+endif()
+install(TARGETS rps-value RUNTIME DESTINATION bin)
